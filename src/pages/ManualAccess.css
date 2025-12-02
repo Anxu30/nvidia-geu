@@ -1,0 +1,130 @@
+:root {
+  --manual-bg-start: #02061a;
+  --manual-bg-end: #0a2445;
+  --manual-card: rgba(9, 20, 44, 0.82);
+  --accent-cyan: #5efce8;
+  --accent-blue: #5e8bff;
+  --text-main: #f8fbff;
+  --text-muted: rgba(248, 251, 255, 0.78);
+}
+
+.manual-shell {
+  min-height: 100vh;
+  padding: clamp(120px, 18vh, 170px) clamp(18px, 6vw, 80px) 110px;
+  background: radial-gradient(circle at top, rgba(94, 252, 232, 0.18), transparent 45%),
+    linear-gradient(140deg, var(--manual-bg-start), var(--manual-bg-end));
+  font-family: "Poppins", sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 6vw, 64px);
+}
+
+.manual-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.manual-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(120deg, var(--accent-cyan), var(--accent-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.manual-hero p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.manual-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(18px, 4vw, 32px);
+}
+
+.manual-card {
+  padding: clamp(22px, 5vw, 36px);
+  border-radius: 28px;
+  background: linear-gradient(160deg, var(--manual-card), rgba(6, 12, 30, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(2, 6, 18, 0.55);
+  backdrop-filter: blur(12px);
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.manual-card h2 {
+  margin: 0 0 12px;
+  color: var(--text-main);
+  font-size: 1.4rem;
+}
+
+.manual-card ul,
+.manual-card ol {
+  margin: 0 0 0 18px;
+  padding: 0;
+}
+
+.manual-card li + li {
+  margin-top: 6px;
+}
+
+.manual-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(3, 8, 20, 0.6);
+}
+
+.manual-table th,
+.manual-table td {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.manual-table th {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+blockquote {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.04);
+  font-style: italic;
+}
+
+.manual-card a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.manual-card a:hover {
+  text-decoration: underline;
+}
+
+.manual-footer {
+  text-align: center;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .manual-shell {
+    padding: 110px 16px 80px;
+  }
+
+  .manual-grid {
+    grid-template-columns: 1fr;
+  }
+}

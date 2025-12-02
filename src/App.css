@@ -1,0 +1,10 @@
+.pageContent {
+  margin: 10px 40px; /* more space on desktop */
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .pageContent {
+    margin: 10px 15px; /* reduce side margins on mobile */
+  }
+}

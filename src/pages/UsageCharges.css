@@ -1,0 +1,85 @@
+:root {
+  --charge-bg-start: #04091e;
+  --charge-bg-end: #0c2a49;
+  --charge-card: rgba(10, 22, 56, 0.84);
+  --accent-amber: #ffcf8f;
+  --accent-cyan: #5efce8;
+  --text-main: #f8fbff;
+  --text-muted: rgba(248, 251, 255, 0.78);
+}
+
+.charges-shell {
+  min-height: 100vh;
+  padding: clamp(120px, 18vh, 170px) clamp(18px, 6vw, 80px) 110px;
+  background: radial-gradient(circle at top, rgba(94, 252, 232, 0.18), transparent 45%),
+    linear-gradient(135deg, var(--charge-bg-start), var(--charge-bg-end));
+  font-family: "Poppins", sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 48px);
+  align-items: center;
+}
+
+.charges-hero {
+  text-align: center;
+  max-width: 720px;
+}
+
+.charges-hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  color: var(--accent-amber);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.charges-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(120deg, var(--accent-cyan), var(--accent-amber));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.charges-hero p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.charges-card {
+  width: min(760px, 100%);
+  padding: clamp(24px, 5vw, 38px);
+  border-radius: 28px;
+  background: linear-gradient(150deg, var(--charge-card), rgba(6, 12, 30, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(2, 6, 18, 0.5);
+  backdrop-filter: blur(12px);
+  text-align: left;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.charges-card h2 {
+  margin: 0 0 12px;
+  color: var(--text-main);
+}
+
+.charges-card a {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.charges-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .charges-shell {
+    padding: 110px 16px 80px;
+  }
+}

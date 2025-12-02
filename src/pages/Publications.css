@@ -1,0 +1,87 @@
+:root {
+  --pub-bg-start: #030a1c;
+  --pub-bg-end: #0b2747;
+  --pub-card: rgba(9, 20, 44, 0.84);
+  --accent-emerald: #59ffb4;
+  --accent-cyan: #5efce8;
+  --text-main: #f8fbff;
+  --text-muted: rgba(248, 251, 255, 0.78);
+}
+
+.pub-shell {
+  min-height: 100vh;
+  padding: clamp(120px, 18vh, 160px) clamp(20px, 6vw, 90px) 110px;
+  background: radial-gradient(circle at top, rgba(94, 252, 232, 0.18), transparent 45%),
+    linear-gradient(140deg, var(--pub-bg-start), var(--pub-bg-end));
+  font-family: "Poppins", sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 50px);
+  align-items: center;
+  border-radius: 10px;
+}
+.pub-shell a:hover
+{  text-decoration: none;
+  color: var(--accent-hot);}
+
+.pub-hero {
+  text-align: center;
+  max-width: 760px;
+}
+
+.pub-hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  color: var(--accent-emerald);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.pub-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(120deg, var(--accent-cyan), var(--accent-emerald));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pub-hero p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.pub-card {
+  width: min(720px, 100%);
+  padding: clamp(24px, 5vw, 36px);
+  border-radius: 28px;
+  background: linear-gradient(150deg, var(--pub-card), rgba(6, 12, 30, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(2, 6, 20, 0.55);
+  backdrop-filter: blur(12px);
+  text-align: left;
+  line-height: 1.8;
+}
+
+.pub-card h2 {
+  margin: 0 0 12px;
+}
+
+.pub-card a {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pub-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .pub-shell {
+    padding: 110px 16px 80px;
+  }
+}

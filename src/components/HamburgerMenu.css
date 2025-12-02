@@ -1,0 +1,197 @@
+:root {
+  --menu-bg-start: rgba(6, 14, 38, 0.92);
+  --menu-bg-end: rgba(11, 36, 85, 0.9);
+  --menu-border: rgba(255, 255, 255, 0.12);
+  --accent-lime: #76B900;
+  --accent-coral: #d686db;
+  --text-light: #f8fbff;
+}
+
+.hamburger {
+  position: fixed;
+  left: 24px;
+  top: 155px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.hamburger span {
+  height: 2px;
+  width: 24px;
+  background: linear-gradient(120deg, var(--accent-lime), var(--accent-coral));
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.request-btn {
+  position: fixed;
+  right: 24px;
+  top: 155px;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background:#e8b9ef;
+
+  
+
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  box-shadow: 0 20px 30px rgba(91, 110, 255, 0.35);
+  z-index: 40;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.request-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 25px 40px rgba(206, 63, 185, 0.45);
+
+
+}
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 5, 15, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(2px);
+  z-index: 30;
+}
+
+.menu-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu {
+  position: fixed;
+  top: 160px;
+  left: -320px;
+  width: min(300px, 80vw);
+  height: 400px;
+  padding: 70px 28px 32px;
+  background: linear-gradient(160deg, var(--menu-bg-start), var(--menu-bg-end));
+  border-right: 1px solid var(--menu-border);
+  box-shadow: 20px 0 60px rgba(0, 0, 0, 0.45);
+  transition: left 0.35s ease;
+  z-index: 35;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 10px;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.menu-heading .eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  color:#ee94d8;
+  margin-bottom: 15px;
+  margin-top:-20px;
+  text-align: center;
+}
+.menu-heading{
+  text-align: center;
+ 
+}
+
+.menu-heading h3 {
+  margin: 0;
+  color:#76B900;
+  
+  font-size: 1.25rem;
+}
+
+.menu-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-link {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.menu-link:hover {
+  transform: translateX(6px);
+  background: linear-gradient(135deg, rgba(94, 252, 232, 0.2), rgba(115, 110, 254, 0.35));
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hamburger,
+  .request-btn {
+    top: 150px;
+  }
+
+  .request-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  .side-menu {
+    padding: 90px 24px 24px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hamburger {
+    top: 190px;
+  }
+
+  .request-btn {
+    right: 20px;
+    top: 130px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,129 @@
+:root {
+  --soft-bg-start: #04071d;
+  --soft-bg-end: #101f44;
+  --soft-card: rgba(10, 22, 56, 0.82);
+  --accent-cyan: #5efce8;
+  --accent-violet: #736efe;
+  --text-main: #f8fbff;
+  --text-muted: rgba(248, 251, 255, 0.78);
+}
+
+/* ===============================
+   PAGE WRAPPER
+=================================*/
+.software-shell {
+  min-height: 100vh;
+  padding: clamp(120px, 18vh, 170px) clamp(18px, 6vw, 80px) 110px;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(
+      circle at top,
+      rgba(94, 252, 232, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(135deg, var(--soft-bg-start), var(--soft-bg-end));
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 48px);
+}
+
+/* ===============================
+   HERO SECTION
+=================================*/
+.software-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.software-hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.software-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(120deg, var(--accent-cyan), var(--accent-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.software-hero p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===============================
+   CARD GRID
+=================================*/
+.software-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 4vw, 28px);
+}
+
+/* ===============================
+   CLICKABLE CARDS
+=================================*/
+.software-card {
+  display: block;  /* anchor behaves like block card */
+  text-decoration: none;
+  padding: clamp(18px, 4vw, 28px);
+  border-radius: 24px;
+  background: linear-gradient(
+    150deg,
+    var(--soft-card),
+    rgba(6, 12, 32, 0.9)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(2, 6, 18, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  cursor: pointer;
+}
+
+.software-card:hover,
+.software-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 70px rgba(2, 6, 18, 0.65);
+  border-color: rgba(94, 252, 232, 0.4);
+}
+
+/* active mouse click */
+.software-card:active {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   CARD CONTENT
+=================================*/
+.software-card h3 {
+  margin: 0 0 10px;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.software-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+@media (max-width: 640px) {
+  .software-shell {
+    padding: 110px 16px 80px;
+  }
+}

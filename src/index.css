@@ -1,0 +1,26 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #f2efef;
+}
+
+.pageContent {
+  min-height: 100vh;
+  margin-top:80px;
+  padding: 20px;
+  box-sizing: border-box;
+ 
+}
